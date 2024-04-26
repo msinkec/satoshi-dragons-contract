@@ -182,6 +182,8 @@ export class SatoshiDragonsContract extends OrdinalNFT {
             }
         }
 
+        outputs += this.buildChangeOutput()
+
         assert(
             this.ctx.hashOutputs == hash256(outputs),
             'hashOutputs check failed'

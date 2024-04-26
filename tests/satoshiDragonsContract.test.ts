@@ -277,10 +277,10 @@ describe('Test SmartContract `SatoshiDragonsContract`', () => {
                 )
             }
 
-            //// build change output
-            //if (options.changeAddress) {
-            //    unsignedTx.change(options.changeAddress)
-            //}
+            // build change output
+            if (options.changeAddress) {
+                unsignedTx.change(options.changeAddress)
+            }
 
             return Promise.resolve({
                 tx: unsignedTx,
@@ -293,6 +293,7 @@ describe('Test SmartContract `SatoshiDragonsContract`', () => {
 
         const partialTx = await dragon0.methods.battleExec(merkleProof, bh, {
             multiContractCall: true,
+            changeAddress: await dragon1Signer.getDefaultAddress(),
         } as MethodCallOptions<SatoshiDragonsContract>)
 
         dragon1.bindTxBuilder('battleExec', battleExecTxBuilder)
