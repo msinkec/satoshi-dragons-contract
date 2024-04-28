@@ -6,7 +6,7 @@ Satoshi Dragons is a Bitcoin-based game where a collection of NFTs, namely the d
 
 Note that this repository only contains the core smart contract, which may be integrated into a front-end.
 
-<img src="https://gist.github.com/assets/44239392/7691a1a8-6037-46b9-9b2e-6ce3edf655af" alt="dragon" width="200"/>
+<img src="https://github.com/msinkec/satoshi-dragons-contract/assets/44239392/4fd1def5-ce85-450b-96f6-f1b270825f09" alt="dragon" width="200"/>
 
 ### How It Works
 
@@ -18,7 +18,7 @@ An owner of one dragon can challenge another by constructing a "challenge" [PSBT
 
 Once the challenge transaction is broadcast and mined into a block, the battle can be executed via a smart contract method call. The called method implements the game mechanics. The outcome of the battle depends on the dragons' power levels. The higher it is relative to the opposing dragon, the higher the chance of winning. To keep things interesting, randomness is introduced via the block header, where the challenge transaction was mined.
 
-![tx-diagram](https://gist.github.com/assets/44239392/7c6131d1-acb1-4ec7-bf55-8362d5ceb4a1)
+![tx-diagram](https://github.com/msinkec/satoshi-dragons-contract/assets/44239392/a0734fe7-9f26-4bac-9fb3-0d6c7b773731)
 
 ### Potential Problem: Players "feeding" their own dragon
 
