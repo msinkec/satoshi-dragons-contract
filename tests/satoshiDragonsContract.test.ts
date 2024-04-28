@@ -30,6 +30,8 @@ describe('Test SmartContract `SatoshiDragonsContract`', () => {
     let deployTxDragon0: bsv.Transaction
     let deployTxDragon1: bsv.Transaction
 
+    let challengeTx: bsv.Transaction
+
     before(async () => {
         await SatoshiDragonsContract.loadArtifact()
 
@@ -129,7 +131,7 @@ describe('Test SmartContract `SatoshiDragonsContract`', () => {
             } as MethodCallOptions<SatoshiDragonsContract>
         )
 
-        // Dragon #1 accepts challange by signing PSBT
+        // Dragon #1 accepts challenge by signing PSBT
         dragon1.bindTxBuilder(
             'challenge',
             async (
@@ -179,7 +181,9 @@ describe('Test SmartContract `SatoshiDragonsContract`', () => {
         dragon0 = nexts[0].instance
         dragon1 = nexts[1].instance
 
-        console.log('Battle challange accepted: ', callTx.id)
+        challengeTx = callTx
+
+        console.log('Battle challenge accepted: ', callTx.id)
     })
 
     it('battle', async () => {
@@ -198,13 +202,7 @@ describe('Test SmartContract `SatoshiDragonsContract`', () => {
                 )
             ),
             merkleRoot: Sha256(
-                reverseByteString(
-                    toByteString(
-                        // challangeTx.id TODO: switch back to txid
-                        '0000000000000000000000000000000000000000000000000000000000000000'
-                    ),
-                    32n
-                )
+                reverseByteString(toByteString(challengeTx.id), 32n)
             ),
             time: 1690000000n,
             bits: reverseByteString(toByteString('00000000'), 4n),

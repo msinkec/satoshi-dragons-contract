@@ -18,7 +18,7 @@ An owner of one dragon can challenge another by constructing a "challenge" [PSBT
 
 Once the challenge transaction is broadcast and mined into a block, the battle can be executed via a smart contract method call. The called method implements the game mechanics. The outcome of the battle depends on the dragons' power levels. The higher it is relative to the opposing dragon, the higher the chance of winning. To keep things interesting, randomness is introduced via the block header, where the challenge transaction was mined.
 
-![image](https://gist.github.com/assets/44239392/7c6131d1-acb1-4ec7-bf55-8362d5ceb4a1)
+![tx-diagram](https://gist.github.com/assets/44239392/7c6131d1-acb1-4ec7-bf55-8362d5ceb4a1)
 
 ### Potential Problem: Players "feeding" their own dragon
 

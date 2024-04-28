@@ -91,6 +91,7 @@ export class SatoshiDragonsContract extends OrdinalNFT {
         this.checkBattlePrevouts()
 
         // Get entropy from BH.
+        // (Commented out for easier testing...)
         //assert(
         //    Blockchain.isValidBlockHeader(
         //        bh, SatoshiDragonsContract.TARGET_DIFFICULTY
