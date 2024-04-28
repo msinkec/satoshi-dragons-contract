@@ -24,7 +24,7 @@ Once the challenge transaction is broadcast and mined into a block, the battle c
 
 Players may "feed" their own dragons by battling their dragon against forged low-level dragons they created. To resolve this, game clients would have to index the history of a dragon to validate that it stems from the same valid genesis transaction as theirs. A better on-chain approach would be to make the smart contract validate a recursive zk-SNARK that proves the history of the NFT. However, as of this writing, there is no working implementation of a recursive SNARK verifier on Bitcoin yet.
 
-So, for now, if it is detected that a dragon NFT has engaged in some non-valid interaction in its history, it is disqualified from the game.
+So, for now, if it is detected by the game clients, that a dragon NFT has engaged in some non-valid interaction in its history, it is disqualified from the game.
 
 ## Build
 
